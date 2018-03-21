@@ -68,20 +68,19 @@ ENV CPPFLAGS="-I/usr/local/facebook/include"
 
 WORKDIR /tmp
 
-wget -O /tmp/folly-${FB_VERSION}.tar.gz https://github.com/facebook/folly/archive/v${FB_VERSION}.tar.gz
-wget -O /tmp/wangle-${FB_VERSION}.tar.gz https://github.com/facebook/wangle/archive/v${FB_VERSION}.tar.gz
-wget -O /tmp/fbthrift-${FB_VERSION}.tar.gz https://github.com/facebook/fbthrift/archive/v${FB_VERSION}.tar.gz
-wget -O /tmp/proxygen-${FB_VERSION}.tar.gz https://github.com/facebook/proxygen/archive/v${FB_VERSION}.tar.gz
-wget -O /tmp/mstch-master.tar.gz https://github.com/no1msd/mstch/archive/master.tar.gz
-wget -O /tmp/zstd-${ZSTD_VERSION}.tar.gz https://github.com/facebook/zstd/archive/v${ZSTD_VERSION}.tar.gz
-
-tar xzvf folly-${FB_VERSION}.tar.gz
-tar xzvf wangle-${FB_VERSION}.tar.gz
-tar xzvf fbthrift-${FB_VERSION}.tar.gz
-tar xzvf proxygen-${FB_VERSION}.tar.gz
-tar xzvf mstch-master.tar.gz
-tar xzvf zstd-${ZSTD_VERSION}.tar.gz
-
+RUN wget -O /tmp/folly-${FB_VERSION}.tar.gz https://github.com/facebook/folly/archive/v${FB_VERSION}.tar.gz
+RUN wget -O /tmp/wangle-${FB_VERSION}.tar.gz https://github.com/facebook/wangle/archive/v${FB_VERSION}.tar.gz
+RUN wget -O /tmp/fbthrift-${FB_VERSION}.tar.gz https://github.com/facebook/fbthrift/archive/v${FB_VERSION}.tar.gz
+RUN wget -O /tmp/proxygen-${FB_VERSION}.tar.gz https://github.com/facebook/proxygen/archive/v${FB_VERSION}.tar.gz
+RUN wget -O /tmp/mstch-master.tar.gz https://github.com/no1msd/mstch/archive/master.tar.gz
+RUN wget -O /tmp/zstd-${ZSTD_VERSION}.tar.gz https://github.com/facebook/zstd/archive/v${ZSTD_VERSION}.tar.gz
+RUN 
+RUN tar xzvf folly-${FB_VERSION}.tar.gz
+RUN tar xzvf wangle-${FB_VERSION}.tar.gz
+RUN tar xzvf fbthrift-${FB_VERSION}.tar.gz
+RUN tar xzvf proxygen-${FB_VERSION}.tar.gz
+RUN tar xzvf mstch-master.tar.gz
+RUN tar xzvf zstd-${ZSTD_VERSION}.tar.gz
 
 RUN $WORKDIR/setup_ubuntu.sh
 
